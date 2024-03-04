@@ -1,0 +1,119 @@
+
+  {
+  "cards": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "cardNumber": "1234 5678",
+      "iban": "GB12 XXXX XXXX XXXX XXXX XX",
+      "account": "12345678",
+      "expireDate": "12/24",
+      "isActive": true,
+      "description": "Personal Card"
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "cardNumber": "9876 5432",
+      "iban": "DE12 XXXX XXXX XXXX XXXX XX",
+      "account": "87654321",
+      "expireDate": "08/23",
+      "isActive": false,
+      "description": "Business Card"
+    },
+    {
+      "id": 3,
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "cardNumber": "4567 8901",
+      "iban": "US34 XXXX XXXX XXXX XXXX XX",
+      "account": "56789012",
+      "expireDate": "06/22",
+      "isActive": true,
+      "description": "Family Card"
+    },
+    {
+      "id": 4,
+      "firstName": "Bob",
+      "lastName": "Williams",
+      "cardNumber": "9870 6543",
+      "iban": "FR56 XXXX XXXX XXXX XXXX XX",
+      "account": "43210987",
+      "expireDate": "02/25",
+      "isActive": false,
+      "description": "Travel Card"
+    },
+    {
+      "id": 5,
+      "firstName": "Ella",
+      "lastName": "Anderson",
+      "cardNumber": "3456 7890",
+      "iban": "ES78 XXXX XXXX XXXX XXXX XX",
+      "account": "90123456",
+      "expireDate": "11/23",
+      "isActive": true,
+      "description": "Shopping Card"
+    },
+    {
+      "id": 6,
+      "firstName": "David",
+      "lastName": "Miller",
+      "cardNumber": "8765 4321",
+      "iban": "NL21 XXXX XXXX XXXX XXXX XX",
+      "account": "76543210",
+      "expireDate": "05/24",
+      "isActive": false,
+      "description": "Entertainment Card"
+    },
+    {
+      "id": 7,
+      "firstName": "Olivia",
+      "lastName": "Moore",
+      "cardNumber": "1230 4567",
+      "iban": "BE45 XXXX XXXX XXXX XXXX XX",
+      "account": "67890123",
+      "expireDate": "09/22",
+      "isActive": true,
+      "description": "Fitness Card"
+    },
+    {
+      "id": 8,
+      "firstName": "Liam",
+      "lastName": "Brown",
+      "cardNumber": "9876 5432",
+      "iban": "IT67 XXXX XXXX XXXX XXXX XX",
+      "account": "87654321",
+      "expireDate": "03/23",
+      "isActive": false,
+      "description": "Medical Card"
+    },
+    {
+      "id": 9,
+      "firstName": "Sophia",
+      "lastName": "Clark",
+      "cardNumber": "5678 9012",
+      "iban": "GR12 XXXX XXXX XXXX XXXX XX",
+      "account": "90123456",
+      "expireDate": "10/24",
+      "isActive": true,
+      "description": "Education Card"
+    },
+    {
+      "id": 10,
+      "firstName": "Noah",
+      "lastName": "Davis",
+      "cardNumber": "8765 4321",
+      "iban": "PT34 XXXX XXXX XXXX XXXX XX",
+      "account": "76543210",
+      "expireDate": "07/22",
+      "isActive": false,
+      "description": "Gaming Card"
+    }
+    
+      
+    ]
+    
+
+}
