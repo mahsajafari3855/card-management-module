@@ -4,6 +4,10 @@ import { Button, Card, Form, Modal, Table } from "react-bootstrap";
 import { Toggle } from "rsuite";
 import { FaPencilAlt, FaPlus, FaTrashAlt } from "react-icons/fa";
 import { AppDispatch } from "../../store/store";
+import { v4 as uuidv4 } from "uuid";
+import "./CardList.css"; // Import your CSS file
+
+
 import {
   editCard,
   addCard,
@@ -21,7 +25,7 @@ export const CardList: React.FC = () => {
   }, [dispatch]);
 
   const initCurrentUser = {
-    id: null,
+    id: "",
     firstName: "",
     lastName: "",
     cardNumber: "",
@@ -36,6 +40,7 @@ export const CardList: React.FC = () => {
   const [show, setShow] = useState(false);
   const [newUser, setNewUser] = useState(initCurrentUser);
   const [editing, setEdit] = useState(false);
+  
 
   const handleShow = () => {
     setShow(true);
@@ -49,14 +54,20 @@ export const CardList: React.FC = () => {
   };
 
   const onFormSubmit = (newUser: any) => {
-    dispatch(addCard(newUser));
+    const id = editing ? newUser.id : uuidv4(); // Use existing ID for edit, generate a new one for add
+    editing
+      ? dispatch(editCard({ ...newUser, id }))
+      : dispatch(addCard({ ...newUser, id }));
     handleClose();
   };
+
+
 
   const onEdit = (card: any) => {
     setEdit(true);
     setNewUser(card);
     handleShow();
+    console.log("edit")
   };
 
   const onUpdateUser = (editedCard: any) => {
@@ -71,7 +82,18 @@ export const CardList: React.FC = () => {
 
   return (
     <>
-      {/* ... (rest of your code) ... */}
+      {/* Add button to trigger modal for adding a new card */}
+      <div className="d-flex justify-content-center align-items-center">
+        <Button
+          variant="primary"
+          onClick={handleShow}
+          title="Add Card"
+          className="add-card-btn" // Apply the custom style class
+        >
+          <FaPlus /> Add Card
+        </Button>
+      </div>
+
       <Table striped bordered hover variant="dark" className="custom-table">
         <thead className="custom-table-header">
           <tr>
@@ -102,6 +124,8 @@ export const CardList: React.FC = () => {
                   variant="info"
                   title="Edit user details"
                   onClick={() => onEdit(card)}
+                  className="                  edit-btn
+" // Apply the custom style class
                 >
                   <FaPencilAlt />
                 </Button>{" "}
@@ -109,6 +133,7 @@ export const CardList: React.FC = () => {
                   variant="danger"
                   title="Delete user"
                   onClick={() => onDeleteUser(card.id)}
+                  className="delete-btn" // Apply the custom style class
                 >
                   <FaTrashAlt />
                 </Button>
@@ -124,7 +149,127 @@ export const CardList: React.FC = () => {
             editing ? onUpdateUser(newUser) : onFormSubmit(newUser);
           }}
         >
-          {/* ... (rest of your Modal code) ... */}
+          <Modal.Header closeButton>
+            {editing ? (
+              <Modal.Title>Edit Card</Modal.Title>
+            ) : (
+              <Modal.Title>Add Card</Modal.Title>
+            )}
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group className="mb-3" controlId="formId">
+              <Form.Label>ID</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.id ?? ""}
+                onChange={(e) => setNewUser({ ...newUser, id: e.target.value })}
+                placeholder="Enter ID"
+                disabled // Disable editing of ID
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formLastName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.firstName}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, firstName: e.target.value })
+                }
+                placeholder="Enter First Name"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.lastName}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, lastName: e.target.value })
+                }
+                placeholder="Enter Last Name"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formCardNumber">
+              <Form.Label>Card Number</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.cardNumber}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, cardNumber: e.target.value })
+                }
+                placeholder="Enter Card Number"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formIban">
+              <Form.Label>IBAN</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.iban}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, iban: e.target.value })
+                }
+                placeholder="Enter IBAN"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formAccount">
+              <Form.Label>Account</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.account}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, account: e.target.value })
+                }
+                placeholder="Enter Account"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formExpireDate">
+              <Form.Label>Expire Date</Form.Label>
+              <Form.Control
+                type="text"
+                value={newUser.expireDate}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, expireDate: e.target.value })
+                }
+                placeholder="Enter Expire Date"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formIsActive">
+              <Form.Check
+                type="checkbox"
+                label="Is Active"
+                checked={newUser.isActive}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, isActive: e.target.checked })
+                }
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formDescription">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                value={newUser.description}
+                onChange={(e) =>
+                  setNewUser({ ...newUser, description: e.target.value })
+                }
+                placeholder="Enter Description"
+              />
+            </Form.Group>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={handleClose}
+              disabled={!newUser.firstName} // Add your condition here
+            >
+              {editing ? "Update" : "Submit"}
+            </Button>
+          </Modal.Footer>
         </Form>
       </Modal>
     </>

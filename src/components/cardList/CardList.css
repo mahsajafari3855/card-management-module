@@ -1,0 +1,75 @@
+/* CardList.css */
+
+.custom-table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px; /* Add some margin for spacing */
+}
+
+.custom-table th, .custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #2a2929; /* Add a background color for header cells */
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #444242; /* Add alternating row background color */
+}
+
+.custom-table tbody tr:hover {
+  background-color: #709dcd; /* Change background color on hover */
+}
+
+/* Add any other styles you want for your table */
+
+/* CardList.css */
+
+.add-card-btn {
+  background-color: #709dcd; /* Set the background color to a primary color */
+  color: #fff; /* Set the text color to white */
+  padding: 10px 15px; /* Add padding for better spacing */
+  margin: 10px;
+  border: none;
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.add-card-btn:hover {
+  background-color: #0056b3; /* Darken the background color on hover */
+}
+
+/* CardList.css */
+
+.delete-btn {
+  background-color: #dc3545; /* Set the background color to a red color */
+  color: #fff; /* Set the text color to white */
+  padding: 5px 10px; /* Add padding for better spacing */
+  border: none;
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.delete-btn:hover {
+  background-color: #c82333; /* Darken the background color on hover */
+}
+
+.edit-btn {
+  background-color: #28a745; /* Green color for the "Edit" button */
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #218838; /* Darker green color on hover */
+}
