@@ -38,10 +38,17 @@ export const fetchCards = createAsyncThunk("cards/fetchCards", async () => {
 export const searchCards = createAsyncThunk(
   "cards/searchCards",
   async (searchTerm: string) => {
-    const response = await axios.get(
-      `${API_BASE_URL}/cards?search=${searchTerm}`
-    );
-    return response.data;
+    const response = await axios.get(`${API_BASE_URL}/cards`);
+    const filteredCards = response.data.filter((card: MyCard) => {
+      return (
+        card.id.toString().includes(searchTerm) ||
+        `${card.firstName} ${card.lastName}`
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        card.iban.includes(searchTerm)
+      );
+    });
+    return filteredCards;
   }
 );
 

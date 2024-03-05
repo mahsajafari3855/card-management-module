@@ -1,10 +1,11 @@
 /* CardList.css */
 
+/* Table Styles */
 .custom-table {
+  width: 100%;
   border: 1px solid #ddd;
   border-collapse: collapse;
-  width: 100%;
-  margin-top: 20px; /* Add some margin for spacing */
+  margin-top: 20px;
 }
 
 .custom-table th, .custom-table td {
@@ -14,54 +15,49 @@
 }
 
 .custom-table th {
-  background-color: #2a2929; /* Add a background color for header cells */
+  background-color: #2a2929;
 }
 
 .custom-table tbody tr:nth-child(even) {
-  background-color: #444242; /* Add alternating row background color */
+  background-color: #444242;
 }
 
 .custom-table tbody tr:hover {
-  background-color: #709dcd; /* Change background color on hover */
+  background-color: #709dcd;
 }
 
-/* Add any other styles you want for your table */
-
-/* CardList.css */
-
+/* Button Styles */
 .add-card-btn {
-  background-color: #709dcd; /* Set the background color to a primary color */
-  color: #fff; /* Set the text color to white */
-  padding: 10px 15px; /* Add padding for better spacing */
+  background-color: #709dcd;
+  color: #fff;
+  padding: 10px 15px;
   margin: 10px;
   border: none;
-  border-radius: 5px; /* Add rounded corners */
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  transition: background-color 0.3s ease;
 }
 
 .add-card-btn:hover {
-  background-color: #0056b3; /* Darken the background color on hover */
+  background-color: #0056b3;
 }
 
-/* CardList.css */
-
 .delete-btn {
-  background-color: #dc3545; /* Set the background color to a red color */
-  color: #fff; /* Set the text color to white */
-  padding: 5px 10px; /* Add padding for better spacing */
+  background-color: #dc3545;
+  color: #fff;
+  padding: 5px 10px;
   border: none;
-  border-radius: 5px; /* Add rounded corners */
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  transition: background-color 0.3s ease;
 }
 
 .delete-btn:hover {
-  background-color: #c82333; /* Darken the background color on hover */
+  background-color: #c82333;
 }
 
 .edit-btn {
-  background-color: #28a745; /* Green color for the "Edit" button */
+  background-color: #28a745;
   color: #fff;
   padding: 8px 12px;
   border: none;
@@ -71,5 +67,27 @@
 }
 
 .edit-btn:hover {
-  background-color: #218838; /* Darker green color on hover */
+  background-color: #218838;
+}
+
+/* Search Input Styles */
+.search-input {
+  width: 300px;
+  margin-right: 10px;
+  padding: 7px 10px;
+}
+
+/* Clear Button Styles */
+.clear-btn {
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+  background-color: #5a6268;
 }
