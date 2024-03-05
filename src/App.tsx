@@ -1,8 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import CardList from './components/cardList/CardList';
-
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import CardListContainer from "./components/cardListContainer/CardListContainer";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Card Management System</h1>
       </header>
-      <CardList />
+      <CardListContainer />
     </div>
   );
 }

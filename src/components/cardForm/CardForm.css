@@ -1,0 +1,18 @@
+/* Add styles for CardForm component */
+.custom-form-group {
+  margin-bottom: 15px; /* Add margin between form groups */
+}
+
+.custom-form-label {
+  font-weight: bold; /* Make form labels bold */
+}
+
+.custom-form-control {
+  width: 100%; /* Set form controls to full width */
+}
+
+.custom-checkbox-label {
+  margin-left: 5px; /* Add margin to checkbox label */
+}
+
+/* Add any other styles you want */
