@@ -1,16 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import CardListContainer from "./components/cardListContainer/CardListContainer";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Card Management System</h1>
-      </header>
-      <CardListContainer />
-    </div>
+    <ErrorBoundary>
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">Card Management System</h1>
+        </header>
+        <CardListContainer />
+      </div>
+    </ErrorBoundary>
   );
 }
 
