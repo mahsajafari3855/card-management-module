@@ -1,4 +1,3 @@
-// CardListDisplay.tsx
 import React from "react";
 import { Button, Table } from "react-bootstrap";
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
@@ -57,7 +56,7 @@ const CardListDisplay: React.FC<CardListDisplayProps> = ({
                 variant="danger"
                 title="Delete user"
                 onClick={() => onDelete(card.id)}
-                className="delete-btn" // Apply the custom style class
+                className="delete-btn"
               >
                 <FaTrashAlt />
               </Button>

@@ -1,4 +1,3 @@
-// CardSearch.tsx
 
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -22,10 +21,8 @@ const CardSearch: React.FC<CardSearchProps> = ({
 
   const handleSearch = async (searchTerm: string) => {
     if (searchTerm.trim() === "") {
-      // If search term is empty, fetch all cards
       dispatch(fetchCards());
     } else {
-      // Otherwise, perform search
       await dispatch(searchCards(searchTerm));
     }
     onSearchChange(searchTerm);
